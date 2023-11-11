@@ -3,6 +3,8 @@
 This repository is a simple Spring Boot MVC project that gives you some basic functions on several entities in Sakila database.
 This project is dependent on Spring Web, Lombok, Spring Data JPA, MySQL driver, and Thymeleaf engine.
 
+When you run the project locally on your computer, don't forget to update MySQL connection in application.properties file.
+
 Home page
 
 ![image](https://github.com/wooly905/SakilaSpringBootMVC/assets/18693681/bd9fc8d4-5023-4023-8fb2-bf3d7ef9b94f)
