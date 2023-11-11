@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <style>
+        header {
+          background-color: #333;
+          color: white;
+          padding: 10px 20px;
+          text-align: center;
+        }
+    </style>
+<div th:replace="sakila/head::static('Sakila home')"></div>
+<body>
+<div>
+    <header class="text-blue text-center">Functionalities in Sakila</header>
+</div>
+<div th:replace="sakila/navigation"></div>
+<div class="container my-5 col-md-8">
+    <table class="table table-striped table-hover">
+        <thread>
+            <tr>
+                <td>Function</td>
+                <td>Link</td>
+            </tr>
+        </thread>
+        <tr>
+            <td>Actor list</td>
+            <td><a href="/actor-list">/actor-list</a></td>
+        </tr>
+        <tr>
+            <td>Film list</td>
+            <td><a href="/film-list">/film-list</a></td>
+        </tr>
+        <tr>
+            <td>Film category list</td>
+            <td><a href="/category-list">/category-list</a></td>
+        </tr>
+        <tr>
+            <td>Actor pagination list</td>
+            <td><a href="/actor-pagination">/actor-pagination</a></td>
+        </tr>
+        <tr>
+            <td>Country-city list</td>
+            <td><a href="/country-city-list">/country-city-list</a></td>
+        </tr>
+        <tr>
+            <td>Language list</td>
+            <td><a href="/language-list">/language-list</a></td>
+        </tr>
+        <tr>
+            <td>Rental list</td>
+            <td><a href="/rental-list?startDate=2005/06/01&endDate=2005/07/01">/rental-list?startDate=2005/06/01&endDate=2005/07/01</a></td>
+        </tr>
+        <tr>
+            <td>Staff list</td>
+            <td><a href="/staff-list">/staff-list</a></td>
+        </tr>
+        <tr>
+            <td>Customer list</td>
+            <td><a href="/customer-list">/customer-list</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

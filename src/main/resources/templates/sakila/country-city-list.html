@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace="sakila/head::static('Show country')"></div>
+<div th:replace="sakila/navigation"></div>
+<body>
+<div class="container my-5 col-md-8">
+    <h1 class="nav-link text-blue text-center">Countries and Cities</h1>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Country</th>
+            <th>Cities</th>
+        </tr>
+        <tr th:each="country : ${countries}">
+            <td th:text="${country.country}" class="align-middle"> </td>
+            <td>
+                <ul>
+                    <li th:each="city : ${country.cities}" th:text="${city.city}"></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

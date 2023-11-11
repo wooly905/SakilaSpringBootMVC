@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<div th:replace="sakila/head::static('Edit language')"></div>
+<div th:replace="sakila/navigation"></div>
+<body>
+
+<div class="container my-5 p-5" style="border:1px solid black;">
+    <h4 class="text-center">Edit language</h4>
+    <form class="col-md-4 offset-md-4" th:action="@{/savelanguage}" method="post" th:object="${language}">
+
+        <table class="table table-striped">
+            <tr>
+                <td>Id</td>
+                <td><input readonly name="languageId" th:value="${language.languageId}"/></td>
+            </tr>
+            <tr>
+                <td><label class="form-label">Name</label></td>
+                <td><input type="text" class="form-control" name="name" th:value="${language.name}"></td>
+            </tr>
+            <tr>
+                <td><label class="form-label">Date</label></td>
+                <td><input type="date" class="form-control" name="lastUpdate" th:value="${language.lastUpdate}"></td>
+            </tr>
+        </table>
+
+        <p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </p>
+    </form>
+</div>
+
+</body>
+</html>

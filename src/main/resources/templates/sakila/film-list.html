@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="sakila/head::static('Show films')"></div>
+<div th:replace="sakila/navigation"></div>
+<body>
+<div>
+    <a href="/addFilm">Add a film</a>
+</div>
+<div class="container my-5 col-md-8">
+    <table class="table table-striped table-hover">
+        <thread>
+            <tr>
+                <td>id</td>
+                <td>Title</td>
+                <td>Description</td>
+            </tr>
+        </thread>
+        <tr th:each="f,status : ${films}">
+            <td th:text="${f.filmId}"></td>
+            <td><a th:href="@{/film/{filmId}(filmId=${f.filmId})}" th:text="${f.title}"></a></td>
+            <td th:text="${f.description}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

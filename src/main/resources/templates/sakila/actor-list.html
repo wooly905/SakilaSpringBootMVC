@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="sakila/head::static('Show actors')"></div>
+<div th:replace="sakila/navigation"></div>
+<body>
+<div class="container my-5 col-md-8">
+    <table class="table table-striped table-hover">
+        <thread>
+            <tr>
+                <td>id</td>
+                <td>Actor Nme</td>
+                <td>Actor last update</td>
+                <td>Played Movies</td>
+            </tr>
+        </thread>
+        <tr th:each="actor,status : ${actors}">
+            <td th:text="${actor.actorId}"></td>
+            <td th:text="${actor.firstName} + ' ' + ${actor.lastName}"></td>
+            <td th:text="${#temporals.format(actor.lastUpdate, 'yyyy-MM-dd')}"></td>
+            <td>
+                <ul>
+                    <li th:each="film : ${actor.films}" th:text="${film.title}"></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

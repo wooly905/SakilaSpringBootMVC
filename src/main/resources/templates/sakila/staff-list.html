@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="sakila/head::static('Show staffs')"></div>
+<div th:replace="sakila/navigation"></div>
+<body>
+<div class="container my-5 col-md-8">
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>staff id</th>
+            <th>staff name</th>
+            <th>email</th>
+            <th>home address</th>
+            <th>store address</th>
+        </tr>
+        <tr th:each="s : ${staffs}">
+            <td th:text="${s.staffId}"></td>
+            <td><a th:href="@{/staffdetail/{id}(id=${s.staffId})}" th:text="${s.firstname} + ' ' + ${s.lastname}">John Doe</a></td>
+            <td th:text="${s.email}"></td>
+            <td th:text="${s.address.address}"></td>
+            <td th:text="${s.store.address.address}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

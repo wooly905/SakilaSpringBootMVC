@@ -1,0 +1,34 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="sakila/head::static('Show languages')"></div>
+<div th:replace="sakila/navigation"></div>
+<body>
+<div>
+    <a class="nav-link text-blue text-center" href="/addlanguage">Add a language</a>
+</div>
+<div class="container my-5 col-md-8">
+    <table class="table table-striped table-hover">
+        <thread>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>last update</td>
+                <td>actions</td>
+            </tr>
+        </thread>
+        <tbody>
+        <tr th:each="language,status : ${languages}">
+            <td th:text="${language.languageId}"></td>
+            <td th:text="${language.name}"></td>
+            <td th:text="${language.lastUpdate}"></td>
+            <td>
+                <a style="color:blue" th:href="@{/editlanguage/{id}(id=${language.languageId})}"><i
+                        class="fa-solid fa-pen-to-square ms-4"></i></a>
+                <a style="color:red" th:href="@{/deletelanguage/{id}(id=${language.languageId})}"><i
+                        class="fa-solid fa-trash ms-4"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
