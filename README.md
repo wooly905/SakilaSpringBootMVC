@@ -1,4 +1,4 @@
-# SakilaSpringBootMVC
+# Sakila sample website in Spring Boot MVC
 
 This repository is a simple Spring Boot MVC project that gives you some basic functions on several entities in Sakila database.
 This project is dependent on Spring Web, Lombok, Spring Data JPA, MySQL driver, and Thymeleaf engine.
